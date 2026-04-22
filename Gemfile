@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 ruby '3.1.0'
 
+# Default cgi on Ruby 3.1.0 is 0.3.1; the erb gem (via rdoc/irb) needs cgi >= 0.3.3.
+gem "cgi", ">= 0.3.3"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.3", ">= 7.2.3.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
