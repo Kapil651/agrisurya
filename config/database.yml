@@ -10,3 +10,11 @@ default: &default
 development:
   <<: *default
   database: agrisurya
+
+test:
+  <<: *default
+  database: agrisurya_test
+  
+production:
+  <<: *default
+  database: agrisurya_prod
