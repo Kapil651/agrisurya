@@ -5,7 +5,11 @@
 
 <header>
   <div class="nav-container">
-    <div class="logo">Agri<span>Surya</span></div>
+    <div class="logo">
+      <%= image_tag 'logo_black.png', type: 'image/png', style: 'height: 70px' %>
+      <div>Agri<span>Surya</span></div>
+    </div>
+
     <ul class="nav-menu">
       <% @nav_links.each do |label, anchor| %>
         <li><%= link_to label, anchor %></li>
