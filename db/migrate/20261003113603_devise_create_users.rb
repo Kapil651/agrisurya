@@ -7,7 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.0]
       t.string :encrypted_password, null: false, default: ""
       t.string :first_name, null: false
       t.string :last_name, null: false
-      t.string :role, null: false
+      t.boolean :super_admin, default: false
 
       t.string :reset_password_token
       t.datetime :reset_password_sent_at
