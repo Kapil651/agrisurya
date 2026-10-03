@@ -8,11 +8,20 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+[
+  { name: "AgriSurya Bharat", active: true },
+  { name: "Example Cooperative", active: false }
+].each do |attrs|
+  Organization.find_or_create_by!(name: attrs[:name]) do |organization|
+    organization.active = attrs[:active]
+  end
+end
+
 if Rails.env.development?
   User.find_or_create_by!(email: "admin@agrisurya.test") do |user|
     user.first_name = "Admin"
     user.last_name = "User"
-    user.role = "admin"
+    user.super_admin = true
     user.password = "Password123!"
     user.password_confirmation = "Password123!"
   end

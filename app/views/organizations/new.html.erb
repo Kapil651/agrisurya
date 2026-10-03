@@ -1,0 +1,7 @@
+<% content_for :title, "New organization - AgriSurya" %>
+
+<section>
+  <h1 class="section-title">New organization</h1>
+  <%= render "form", organization: @organization %>
+  <p class="auth-links"><%= link_to "Back to organizations", organizations_path %></p>
+</section>

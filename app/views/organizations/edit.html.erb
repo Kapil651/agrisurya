@@ -1,0 +1,11 @@
+<% content_for :title, "Edit #{@organization.name} - AgriSurya" %>
+
+<section>
+  <h1 class="section-title">Edit organization</h1>
+  <%= render "form", organization: @organization %>
+  <p class="auth-links">
+    <%= link_to "Show", @organization %>
+    ·
+    <%= link_to "Back to organizations", organizations_path %>
+  </p>
+</section>

@@ -17,6 +17,9 @@
       ].each do |label, path| %>
         <li><%= link_to label, path %></li>
       <% end %>
+      <% if user_signed_in? %>
+        <li><%= link_to "Organizations", organizations_path %></li>
+      <% end %>
       <li>
         <% if user_signed_in? %>
           <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-button" %>

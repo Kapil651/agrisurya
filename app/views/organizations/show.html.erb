@@ -1,0 +1,26 @@
+<% content_for :title, "#{@organization.name} - AgriSurya" %>
+
+<section>
+  <h1 class="section-title"><%= @organization.name %></h1>
+
+  <div class="detail-card">
+    <p>
+      <strong>Status</strong>
+      <%= organization_status(@organization) %>
+    </p>
+    <p>
+      <strong>Created</strong>
+      <%= @organization.created_at.to_fs(:long) %>
+    </p>
+    <p>
+      <strong>Updated</strong>
+      <%= @organization.updated_at.to_fs(:long) %>
+    </p>
+  </div>
+
+  <div class="page-actions page-actions-start">
+    <%= link_to "Edit", edit_organization_path(@organization), class: "btn" %>
+    <%= link_to "Back to organizations", organizations_path, class: "btn btn-secondary" %>
+    <%= button_to "Delete", @organization, method: :delete, class: "btn btn-danger", form: { data: { turbo_confirm: "Delete this organization?" } } %>
+  </div>
+</section>

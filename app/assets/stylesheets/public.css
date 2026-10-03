@@ -327,6 +327,140 @@ section {
   border-radius: 4px;
 }
 
+.table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.data-table th,
+.data-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+  background: #f1f8f2;
+  color: var(--primary);
+  font-size: 14px;
+}
+
+.data-table a {
+  color: var(--dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.data-table a:hover,
+.row-actions a {
+  color: var(--primary);
+}
+
+.page-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.page-actions-start {
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+
+.page-actions form {
+  margin: 0;
+}
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.row-actions form {
+  margin: 0;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: #c62828;
+  cursor: pointer;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge-active {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.badge-inactive {
+  background: #eeeeee;
+  color: #616161;
+}
+
+.detail-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 32px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.detail-card p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-card p:last-child {
+  border-bottom: none;
+}
+
+.empty-state {
+  text-align: center;
+  color: #666;
+}
+
+.btn-secondary {
+  background: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: #1b5e20;
+}
+
+.btn-danger {
+  background: #c62828;
+}
+
+.btn-danger:hover {
+  background: #b71c1c;
+}
+
 footer {
   background: var(--primary);
   color: var(--white);

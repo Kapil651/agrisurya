@@ -1,0 +1,24 @@
+<%= form_with(model: organization, class: "contact-form") do |form| %>
+  <% if organization.errors.any? %>
+    <div class="form-errors">
+      <strong><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</strong>
+      <ul>
+        <% organization.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true, autofocus: true %>
+  </div>
+
+  <div class="remember-me">
+    <%= form.checkbox :active %>
+    <%= form.label :active %>
+  </div>
+
+  <%= form.submit class: "btn btn-block" %>
+<% end %>

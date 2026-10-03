@@ -1,0 +1,39 @@
+<% content_for :title, "Organizations - AgriSurya" %>
+
+<section>
+  <h1 class="section-title">Organizations</h1>
+
+  <div class="page-actions">
+    <%= link_to "New organization", new_organization_path, class: "btn" %>
+  </div>
+
+  <% if @organizations.any? %>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Created</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @organizations.each do |organization| %>
+            <tr id="<%= dom_id organization %>">
+              <td><%= link_to organization.name, organization %></td>
+              <td><%= organization_status(organization) %></td>
+              <td><%= organization.created_at.to_fs(:short) %></td>
+              <td class="row-actions">
+                <%= link_to "Edit", edit_organization_path(organization) %>
+                <%= button_to "Delete", organization, method: :delete, class: "link-button", form: { data: { turbo_confirm: "Delete this organization?" } } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <p class="empty-state">No organizations yet.</p>
+  <% end %>
+</section>

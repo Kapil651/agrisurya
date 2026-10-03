@@ -1,0 +1,7 @@
+one:
+  name: North Field Co-op
+  active: true
+
+two:
+  name: South Harvest Ltd
+  active: false
