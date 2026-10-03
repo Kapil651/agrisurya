@@ -8,25 +8,21 @@
     </div>
 
     <ul class="nav-menu">
-      <% [
-        [ "Home", root_path(anchor: "home") ],
-        [ "Services", root_path(anchor: "services") ],
-        [ "Products", root_path(anchor: "products") ],
-        [ "About", root_path(anchor: "about") ],
-        [ "Contact", root_path(anchor: "contact") ]
-      ].each do |label, path| %>
-        <li><%= link_to label, path %></li>
-      <% end %>
       <% if user_signed_in? %>
         <li><%= link_to "Organizations", organizations_path %></li>
-      <% end %>
-      <li>
-        <% if user_signed_in? %>
-          <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-button" %>
-        <% else %>
-          <%= link_to "Login", new_user_session_path %>
+        <li><%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-button" %></li>
+      <% else %>
+       <% [
+          [ "Home", root_path(anchor: "home") ],
+          [ "Services", root_path(anchor: "services") ],
+          [ "Products", root_path(anchor: "products") ],
+          [ "About", root_path(anchor: "about") ],
+          [ "Contact", root_path(anchor: "contact") ]
+        ].each do |label, path| %>
+          <li><%= link_to label, path %></li>
         <% end %>
-      </li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+      <% end %>
     </ul>
   </div>
 </header>

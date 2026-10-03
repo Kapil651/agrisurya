@@ -26,7 +26,7 @@
               <td><%= organization.created_at.to_fs(:short) %></td>
               <td class="row-actions">
                 <%= link_to "Edit", edit_organization_path(organization) %>
-                <%= button_to "Delete", organization, method: :delete, class: "link-button", form: { data: { turbo_confirm: "Delete this organization?" } } %>
+                <%#= button_to "Delete", organization, method: :delete, class: "link-button", form: { data: { turbo_confirm: "Delete this organization?" } } %>
               </td>
             </tr>
           <% end %>
