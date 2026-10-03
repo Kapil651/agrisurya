@@ -1,0 +1,36 @@
+<header>
+  <div class="nav-container">
+    <div class="logo">
+      <%= link_to root_path, class: "logo-link" do %>
+        <%= image_tag "logo_black.png", type: "image/png", style: "height: 70px", alt: "AgriSurya" %>
+        <div>Agri<span>Surya</span></div>
+      <% end %>
+    </div>
+
+    <ul class="nav-menu">
+      <% [
+        [ "Home", root_path(anchor: "home") ],
+        [ "Services", root_path(anchor: "services") ],
+        [ "Products", root_path(anchor: "products") ],
+        [ "About", root_path(anchor: "about") ],
+        [ "Contact", root_path(anchor: "contact") ]
+      ].each do |label, path| %>
+        <li><%= link_to label, path %></li>
+      <% end %>
+      <li>
+        <% if user_signed_in? %>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-button" %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<% if notice.present? %>
+  <p class="flash flash-notice"><%= notice %></p>
+<% end %>
+<% if alert.present? %>
+  <p class="flash flash-alert"><%= alert %></p>
+<% end %>

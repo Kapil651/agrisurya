@@ -1,13 +1,5 @@
 class PublicController < ApplicationController
   def index
-    @nav_links = [
-      [ "Home", "#home" ],
-      [ "Services", "#services" ],
-      [ "Products", "#products" ],
-      [ "About", "#about" ],
-      [ "Contact", "#contact" ]
-    ]
-
     @products = product_catalog
 
     @services = [
