@@ -146,6 +146,36 @@ section {
   color: var(--primary);
 }
 
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  text-align: center;
+  border-top: 4px solid var(--primary);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: #eee;
+}
+
+.product-card h3 {
+  margin: 0;
+  padding: 16px;
+  color: var(--primary);
+  font-size: 18px;
+}
+
 .about {
   background-color: var(--white);
   max-width: 100%;

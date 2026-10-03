@@ -38,6 +38,18 @@
   </div>
 </section>
 
+<section id="products">
+  <h2 class="section-title">Our Products</h2>
+  <div class="product-grid">
+    <% @products.each do |product| %>
+      <article class="product-card">
+        <%= image_tag product[:image], alt: product[:title] %>
+        <h3><%= product[:title] %></h3>
+      </article>
+    <% end %>
+  </div>
+</section>
+
 <section id="about" class="about">
   <div class="about-inner">
     <h2 class="section-title">About Our Farm</h2>
